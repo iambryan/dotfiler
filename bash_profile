@@ -9,4 +9,4 @@
 #bash_version   :4.2.53(1)-release
 #============================================================================
 
-
+umask 0077   # Change to 0022 for less restrictive default permissions
