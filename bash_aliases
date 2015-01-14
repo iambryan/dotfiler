@@ -36,6 +36,7 @@ alias j='jobs -l'
 alias which='type -a'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias psg='ps -A | grep'
 
 # Typo fixes
 
