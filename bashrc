@@ -8,13 +8,36 @@
 #bash_version   :4.2.53(1)-release
 #============================================================================
 
-if [ "$OSTYPE" > "darwin" ]; then
-    if [ -f `brew --prefix`/etc/bash_completion ]; then
-        . `brew --prefix`/etc/bash_completion
+# Determine OS type and if Linux, it's distribution
+
+OS="$(uname -s)"
+case "$(uname -s)" in
+  Linux) # Linux
+    if [ -f "/etc/redhat-release" ] ; then
+      DISTRO="$(awk '{print $1}' /etc/redhat-release)"
     fi
 
-    export JAVA_HOME=$(/usr/libexec/java_home)
-fi
+    if [ -f "/etc/lsb-release" ] ; then
+      DISTRO="$(head -n 1 /etc/lsb-release | awk -F= '{print $2}')"
+    fi
+
+    if [ -f "/etc/os-release" ] ; then
+      DISTRO=opensuse
+    fi
+  ;;
+  Darwin) # Mac OS X
+    # if we can determine the version of java as set in java prefs, then export
+    # JAVA_HOME to match this
+    [[ -s "/usr/libexec/java_home" ]] && export JAVA_HOME=$(/usr/libexec/java_home)
+  ;;
+  CYGWIN_*) # Windows running Cygwin
+  ;;
+esac # uname -s
+
+# @TODO Configure common paths for each $DISTRO
+
+
+
 
 # Load global BASH settings
 if [ -f /etc/bashrc ]; then
@@ -217,53 +240,4 @@ case ${TERM} in
                                # --> Shows full pathname of current dir.
         ;;
 esac
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Use Bash completion, if installed
-if [ -f /etc/bash_completion ]; then
-. /etc/bash_completion
-fi
-
-
-
-
-
-
-
-
-
 
