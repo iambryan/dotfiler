@@ -12,7 +12,19 @@ if [ -d ~/.dotfiler ]; then
     source $dotfiles
   done
 else
-  read #Read input to approve installation
+  read install
+
+  case $install in
+  	y|Y )
+		echo "Installing DotFiler to "
+  		;;
+	n|N )
+		echo "Leaving your files alone now"
+		;;
+	* )
+		echo "Leaving your files alone now";
+		exit
+  esac
 
 
 
