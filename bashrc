@@ -13,6 +13,10 @@
 OS="$(uname -s)"
 case "$(uname -s)" in
   Linux) # Linux
+    if [ -f "/etc/fedora-release" ] ; then
+      DISTRO="$(awk '{print $1}' /etc/fedora-release)"
+    fi
+  
     if [ -f "/etc/redhat-release" ] ; then
       DISTRO="$(awk '{print $1}' /etc/redhat-release)"
     fi
@@ -36,21 +40,15 @@ esac # uname -s
 
 # @TODO Configure common paths for each $DISTRO
 
-
-
-
 # Load global BASH settings
 if [ -f /etc/bashrc ]; then
       . /etc/bashrc   # --> Read /etc/bashrc, if present.
 fi
 
-
 # Load BASH aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-
 
 # Normal Colors
 Black='\e[0;30m'        # Black
@@ -86,19 +84,7 @@ NC="\e[m"               # Color Reset
 
 ALERT=${BWhite}${On_Red} # Bold White on red background
 
-
-
 echo -e "${BCyan}This is BASH ${BRed}${BASH_VERSION%.*}${BCyan}- DISPLAY on ${BRed}$DISPLAY${NC}\n" date
-
-if [ -x /usr/games/fortune ]; then
-    /usr/games/fortune -s     # Makes our day a bit more fun.... :-)
-fi
-
-function _exit()              # Function to run upon exit of shell.
-{
-    echo -e "${BRed}Sayonara Muthafucka...${NC}"
-}
-trap _exit EXIT
 
 #-------------------------------------------------------------
 # Shell Prompt - for many examples, see:
