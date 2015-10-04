@@ -89,3 +89,4 @@ alias videos='cd ~/Videos'
 alias webdesign='cd ~/Web/Design'
 alias whereami='display_info'
 
+alias path='echo $PATH | tr -s ":" "\n"'
