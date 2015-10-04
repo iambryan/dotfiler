@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 
 if [ -x /usr/bin/dircolors ]; then
