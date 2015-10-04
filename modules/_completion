@@ -1,10 +1,13 @@
 #!/bin/bash
-# BASH completion
 
+# @TODO Check for bash completion package install based on $DISTRO and install if missing
 
 # Use Bash completion, if installed
 if [ -f /etc/bash_completion ]; then
 . /etc/bash_completion
 fi
 
+# Add custom completion strings here
 
+# autocomplete ssh commands
+complete -W "$(echo `cat ~/.bash_history | egrep '^ssh ' | sort | uniq | sed 's/^ssh //'`;)" ssh

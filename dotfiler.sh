@@ -9,10 +9,7 @@
 # backup your configs too!!!
 #============================================================================
 
-
-
-
-
+# Check for existing installation, if this fails then prompt to install.
 if [ -d ~/.dotfiler ]; then
   for dotfiles in $(ls ${HOME}/.dotfiler/*.sh) ; do
     source $dotfiles
@@ -33,4 +30,9 @@ else
   esac
 fi
 unset dotfiles
+# @TODO check for dropbox or other online backup
+# Make backup of existing dotfiles before proceeding
+
+
+
 
