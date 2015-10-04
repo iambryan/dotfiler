@@ -2,14 +2,17 @@
 #title          :_shellopts
 #description    :shell option sets for BASH
 #author         :http://github.com/iambryan
-#date           :20150111
+#date           :20151004
 #version        :0.1    
 #notes          :       
 #============================================================================
 
-shopt -s histappend histreedit histverify
+shopt -s histappend
+shopt -s histreedit
+shopt -s histverify
+shopt -s cmdhist
+# shopt -s lithist
 
-# Ignore duplicate entries and don't log commands with a leading space
 HISTCONTROL=ignoredups:ignorespace
 HISTSIZE=3000
 HISTFILESIZE=5000

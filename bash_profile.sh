@@ -1,4 +1,4 @@
-#!/bin/bash -   
+#!/usr/bin/env bash 
 #title          :bash_profile.sh
 #description    :dotfiler's default .bash_profile
 #author         :http://github.com/iambryan

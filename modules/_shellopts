@@ -15,8 +15,4 @@ shopt -s checkwinsize
 shopt -s sourcepath
 shopt -s no_empty_cmd_completion
 shopt -s nocaseglob
-shopt -s cmdhist
-shopt -s histappend
-shopt -s histreedit
-shopt -s histverify
-shopt -s extglob    # Necessary for programmable completion.
+shopt -s extglob
