@@ -1,0 +1,126 @@
+# Master alias list
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+alias l='ls -alF'
+alias la='ll -AF --group-directories-first'
+alias lc='ls -ltcr'        			#  Sort by/show change time,most recent last.
+alias ld='ls -al -d * | egrep "^d"' # only subdirectories
+alias lg="ls -lv --group-directories-first"
+alias lk='ls -lSr'         			#  Sort by size, biggest last.
+alias ll='ls -alF'
+alias lr='ll -R'       
+alias ls='ls --color=auto'
+alias ls='ls -lh --color'
+alias lt='ls -ltr'         			#  Sort by date, most recent last.
+alias lu='ls -ltur'        			#  Sort by/show access time,most recent last.
+alias lx='ls -lXB'         			#  Sort by extension.
+alias tree='tree -Csuh'    			#  Nice alternative to 'recursive ls' ...
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias cd..='cd ..'
+alias back='cd $OLDPWD'
+alias md='mkdir -p'		   #  Makes parent directories as needed
+alias mkdir='md'
+alias backgrounds='cd ~/Pictures/Wallpapers'
+alias backups='cd ~/Backups'
+alias documents='cd ~/Documents'
+alias downloads='cd ~/Downloads'
+alias home='cd ~/'
+alias images='cd ~/Images'
+alias movies='cd ~/Videos'
+alias music='cd ~/Music'
+alias path='echo $PATH | tr -s ":" "\n"'
+alias pictures='cd ~/Pictures'
+alias videos='cd ~/Videos'
+alias recent='ls -alt | head -20' 	# recently changed files
+
+alias h='history'
+alias j='jobs -l'
+alias which='type -a'
+alias psg='ps -A | grep'
+
+
+
+
+# Typo fixes
+
+alias xs='cd'
+alias vf='cd'
+alias moer='more'
+alias moew='more'
+alias kk='ll'
+
+
+
+# git
+alias push='git push'
+alias s='git s'
+alias pull='git pull'
+alias ci='git ci'
+alias lg='git lg'
+alias add='git add'
+alias d='git d'
+alias dc='git dc'
+alias st='git stash'
+alias sp='git sp'
+alias pom='git pom'
+alias pum='git pum'
+alias clone='git clone'
+alias co='git co'
+alias cot='git cot'
+alias b='git b'
+
+
+
+
+# some more ls aliases
+
+
+
+#  ls -A --group-directories-first "$@"
+
+
+
+
+
+
+alias back='cd $OLDPWD'
+alias backgrounds='cd ~/Pictures/Wallpapers'
+alias backups='cd ~/Backups'
+# alias books='cd ~/eBooks'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias documents='cd ~/Documents'
+alias downloads='cd ~/Downloads'
+#alias dropbox='cd ~/Dropbox'
+alias home='cd ~/'
+alias images='cd ~/Images'
+# alias localhost='cd /var/www'
+alias movies='cd ~/Videos'
+alias music='cd ~/Music'
+# alias nautilus-scripts='cd ~/.gnome2/nautilus-scripts'
+# alias nemo-scripts='cd ~/.gnome2/nemo-scripts'
+# alias packages='cd ~/Packages'
+# alias packets='cd ~/.packets'
+alias pictures='cd ~/Pictures'
+# alias ppc='cd ~/PPC'
+# alias public='cd ~/Public'
+# alias temp='cd ~/Temp'
+# alias test='cd ~/.test'
+# alias torrents='cd ~/Torrents'
+# alias ubuntu-texts='cd ~/Documents/"Ubuntu Texts"'
+alias videos='cd ~/Videos'
+# alias webdesign='cd ~/Web/Design'
+alias whereami='display_info'
+alias path='echo $PATH | tr -s ":" "\n"'

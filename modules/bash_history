@@ -1,0 +1,19 @@
+#!/bin/bash -   
+#title          :_shellopts
+#description    :shell option sets for BASH
+#author         :http://github.com/iambryan
+#date           :20151004
+#version        :0.1    
+#notes          :       
+#============================================================================
+
+shopt -s histappend
+shopt -s histreedit
+shopt -s histverify
+shopt -s cmdhist
+# shopt -s lithist
+
+HISTCONTROL=ignoredups:ignorespace
+HISTSIZE=3000
+HISTFILESIZE=5000
+HISTIGNORE="&:ls:ls *:[bf]g:exit"
