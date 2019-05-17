@@ -18,9 +18,10 @@ else
   read install
 
   case $install in
-  	#y|Y )
-		#echo "Installing DotFiler to "
-  	#	;;
+  	y|Y )
+		echo "Installing DotFiler to .filer"
+  	
+    	;;
 	  y|Y|n|N )
 		echo "Leaving your files alone now"
 		;;
