@@ -1,0 +1,39 @@
+histtime=$(date +%Y-%g)
+
+
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=100000
+setopt appendhistory autocd beep extendedglob nomatch notify
+#bindkey -v (-e EMACS Mode recommended)
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# Lines configured by zsh-newuser-install
+#HISTFILE=~/.histfile
+HISTFILE=~/$histtime-terminal.log
+
+
+HISTSIZE=1000
+SAVEHIST=100000
+setopt appendhistory autocd beep extendedglob nomatch notify
+#bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/bryan/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+# MIME type completion bits and pieces
+autoload -U zsh-mime-setup
+zsh-mime-setup
+
+# End of lines added by compinstall
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/bryan/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
